@@ -2,7 +2,7 @@
 import ReactSlider, { ReactSliderProps } from 'react-slider'
 import cn from 'classnames'
 
-export function RangeSlider<T extends number | readonly number[]>(
+export function RangeSelector<T extends number | readonly number[]>(
 	_props: ReactSliderProps<T>
 ) {
 	const isVertical = false

@@ -27,11 +27,6 @@ const config: Config = {
 			}
 		},
 	},
-	safelist: [
-		{
-			pattern: /bg-\[\#[0-9a-fA-F]+\]/
-		}
-	],
 	plugins: [],
 }
 export default config
