@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --foreground-rgb: 0, 0, 0;
+}
+
+/* @media (prefers-color-scheme: dark) {
+    :root {
+        --foreground-rgb: 255, 255, 255;
+        --background-rgb: 244, 244, 244
+    }
+} */
+
+html,
+body {
+    min-height: 100%;
+    margin: 0;
+}
+
+body {
+    color: rgb(var(--foreground-rgb));
+    background: rgb(var(--background-rgb));
+}
+
+
+@layer components {
+    .hover-text {
+        --c: theme('colors.primary');
+        /* the color */
+        --s: .15em;
+
+        line-height: 1.1em;
+        padding-bottom: calc(2.1 * var(--s));
+        background: conic-gradient(from 135deg at top, var(--c) 90deg, #0000 0) left 0 bottom var(--s)/calc(2 * var(--s)) var(--s) repeat-x,
+            conic-gradient(from -45deg at bottom, var(--c) 90deg, #0000 0) left var(--s) bottom 0/calc(2 * var(--s)) var(--s) repeat-x;
+        -webkit-mask: linear-gradient(#000 0 0) content-box,
+            linear-gradient(#000 0 0) 0/var(--_p, 0%) padding-box no-repeat;
+        transition: .5s;
+    }
+
+    .hover-text:hover {
+        --_p: 100%;
+        color: var(--c);
+    }
+}
+
+@layer base {
+
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
